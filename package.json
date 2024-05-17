@@ -1,0 +1,25 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "main": "auth.js",
+  "scripts": {
+    "start": "node auth.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": "auth.js",
+  "pkg": {
+    "assets": [
+      ".env"
+    ],
+    "scripts": [
+      "auth.js"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "puppeteer": "^22.9.0"
+  }
+}
