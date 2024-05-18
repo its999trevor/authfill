@@ -1,5 +1,3 @@
-Sure, I'll update the README file to make it more specific and detailed for your Puppeteer login script. Here's the revised version:
-
 ```markdown
 # Puppeteer Wi-Fi Login Script
 
