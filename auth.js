@@ -1,7 +1,23 @@
-require('dotenv').config();
+const wifi = require('node-wifi');
 const puppeteer = require('puppeteer');
+require('dotenv').config();
 
-(async () => {
+wifi.init({
+  iface: null 
+});
+
+const connectToWiFi = (ssid, password, callback) => {
+  wifi.connect({ ssid, password }, (err) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('Connected to Wi-Fi');
+    setTimeout(callback, 1000); 
+  });
+};
+
+const runPuppeteer = async () => {
   const browser = await puppeteer.launch({
     headless: false,
     args: ['--ignore-certificate-errors']
@@ -9,7 +25,7 @@ const puppeteer = require('puppeteer');
 
   const page = await browser.newPage();
 
-  await page.goto(`${process.env.URI}`, {
+  await page.goto(`${[process.env.URI]}`, {
     waitUntil: 'networkidle2',
     ignoreHTTPSErrors: true
   });
@@ -25,7 +41,8 @@ const puppeteer = require('puppeteer');
   });
 
   await page.click('#submit');
-console.log("user authenticated");
-  await page.waitForTimeout(3000); 
+  console.log("authenticated")
   await browser.close();
-})();
+};
+
+connectToWiFi(`${process.env.WIFINAME}`, `${process.env.WIFIPASSWORD}`, runPuppeteer);
