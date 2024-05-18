@@ -26,13 +26,13 @@ This script automates the process of connecting to a Wi-Fi network and logging i
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/puppeteer-wifi-login-script.git
+   git clone https://github.com/its999trevor/authfill.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd puppeteer-wifi-login-script
+   cd authfill
    ```
 
 3. Install dependencies:
@@ -53,7 +53,7 @@ This script automates the process of connecting to a Wi-Fi network and logging i
    ```plaintext
    WIFINAME=yourWifiName
    WIFIPASSWORD=yourWifiPassword
-   URI=https://192.168.100.1:6082/php/uid.php?vsys=1&rule=7&token
+   URI=neverssl.com
    USERNAME=yourUsername
    PASSWORD=yourPassword
    ```
